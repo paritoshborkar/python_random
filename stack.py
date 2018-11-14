@@ -15,8 +15,7 @@ class stack():
         result = '< '
         temp_node = self.top
         while temp_node is not None:
-            result += str(temp_node.data)
-            result += ' '
+            result += str(temp_node.data) + ' '
             temp_node = temp_node.link
         result += '>'
         return result
