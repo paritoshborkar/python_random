@@ -1,15 +1,17 @@
 class Node():
-   __slots__ = 'data','link'
+    __slots__ = 'data', 'link'
 
-   def __init__(self, data, link = None):
-       self.data = data
-       self.link = link
+    def __init__(self, data, link=None):
+        self.data = data
+        self.link = link
 
-class stack():
-    __slots__ = 'top'
+
+class Stack():
+    __slots__ = 'top', 'size'
 
     def __init__(self):
         self.top = None
+        self.size = 0
 
     def __str__(self):
         result = '< '
@@ -22,12 +24,14 @@ class stack():
 
     def push(self, value):
         self.top = Node(value, self.top)
+        self.size += 1
 
     def pop(self):
         if not self.is_empty():
             result = self.top.data
             self.top = self.top.link
-            return  result
+            self.size -= 1
+            return result
 
     def is_empty(self):
         if self.top is None:
@@ -37,3 +41,7 @@ class stack():
     def peek(self):
         if not self.is_empty():
             return self.top.data
+
+    def __sizeof__(self):
+        return self.size
+

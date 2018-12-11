@@ -6,12 +6,13 @@ class Node():
         self.link = link
 
 
-class queue():
-    __slots__ = 'front', 'back'
+class Queue():
+    __slots__ = 'front', 'back', 'count'
 
     def __init__(self):
         self.front = None
         self.back = None
+        self.count = 0
 
     def __str__(self):
         result = '< '
@@ -28,6 +29,7 @@ class queue():
         else:
             self.back.link = Node(value)
             self.back = self.back.link
+        self.count += 1
 
 
     def pop(self):
@@ -39,6 +41,7 @@ class queue():
         self.front = self.front.link
         if self.front is None:
             self.back = None
+        self.count -= 1
         return result
 
     def is_empty(self):
@@ -53,3 +56,6 @@ class queue():
         """
         if not self.is_empty():
             return self.front.data
+
+    def size(self):
+        return self.count
