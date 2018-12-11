@@ -20,7 +20,7 @@ def getPosition(n, k):
 def main():
     n = int(input('Enter number of people: '))
     k = int(input('Enter position of people to be killed: '))
-    print(getPosition(n, k))
+    print('Stand at position: ', getPosition(n, k))
 
 
 if __name__ == '__main__':
