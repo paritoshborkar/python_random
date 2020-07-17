@@ -1,1 +1,1 @@
-A bunch of python files that I wrote for practice.
+A bunch of problems that I solved and implemented in Python.
